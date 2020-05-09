@@ -16,6 +16,8 @@ public class Kalah {
 		boolean winCondition = false;
 
 		Board board = new Board();
+		int inputNum;
+		String suppliedInput;
 		
 		while (winCondition == false){
 			// main game here
@@ -26,23 +28,25 @@ public class Kalah {
 			io.println("|    |-------+-------+-------+-------+-------+-------|    |");
 			io.println("|  0 | 1[ 4] | 2[ 4] | 3[ 4] | 4[ 4] | 5[ 4] | 6[ 4] | P1 |");
 			io.println("+----+-------+-------+-------+-------+-------+-------+----+");
-			io.println("Player 1's turn - Specify house number or 'q' to quit: ");			
+			io.println("Player 1's turn - Specify house number or 'q' to quit: ");
 
-			String suppliedInput = io.readFromKeyboard("Enter one of 'yes' or 'no' please");
-			//int suppliedInput = io.readInteger("Enter a number between 1 and 20", 1, 20, -1, "no");
+			// player 1's turn
+			suppliedInput = io.readFromKeyboard("Player 1's turn - Specify house number or 'q' to quit: ");
 			if (suppliedInput.toLowerCase() == "q"){
 				break;
 			}
-			int inputNum = Integer.parseInt(suppliedInput);
-
-			// player 1's turn
+			inputNum = Integer.parseInt(suppliedInput);
 			board.MoveSeeds(inputNum -1, 1);
-			// IO
-
-			// do stuff
 
 
 			// player 2's turn
+			suppliedInput = io.readFromKeyboard("Player 1's turn - Specify house number or 'q' to quit: ");
+			if (suppliedInput.toLowerCase() == "q"){
+				break;
+			}
+			inputNum = Integer.parseInt(suppliedInput);
+			board.MoveSeeds(inputNum -1, 2);
+
 
 			// TODO remove this later
 			winCondition = true;
@@ -50,6 +54,8 @@ public class Kalah {
 
 		
 	}
+
+
 
 	public void defaultPrint(IO io){
 
