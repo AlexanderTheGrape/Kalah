@@ -1,0 +1,6 @@
+
+run and see output:
+java -cp junit-3.8.2.jar:kalah.jar:bin kalah.Kalah
+
+run tests:
+java -cp junit-3.8.2.jar:kalah.jar:. junit.textui.TestRunner kalah.test.TestKalah
